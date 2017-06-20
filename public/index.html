@@ -13,6 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-resource.js"></script>
     -->
     <link rel="stylesheet" href="/assets/libs/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/main.min.css">
     <script src="/assets/libs/angular/angular.js"></script>
     <script src="/assets/libs/angular-resource/angular-resource.js"></script>
     <script src="/app/app.modules.js"></script>
@@ -45,10 +46,24 @@
       </div>
     </nav>
 
-    <div ng-controller="JeansController as $ctrl">
-        <ul ng-repeat="jean in $ctrl.jeans">
-            <li>{{ jean.id }}, {{ jean.name }}, {{ jean.brand }}, {{ jean.worn }}, {{ jean.popularity }}</li>
-        </ul>
+    <div class="container-fluid jeans-container" ng-controller="JeansController as $ctrl" >
+        <div class="row">
+            <div class="card text-center col-md-3" ng-repeat="jean in $ctrl.jeans">
+              <img class="card-img-top" src="{{ jean.url }}">
+              <div class="card-block">
+                <h4 class="card-title">{{ jean.name }}</h4>
+                <h5 class="card-text">{{ jean.brand }}</h5>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Worn: {{ jean.worn }}</li>
+                <li class="list-group-item">Popularity: {{ jean.popularity }}</li>
+              </ul>
+              <div class="card-block">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>

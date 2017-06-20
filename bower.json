@@ -1,0 +1,17 @@
+{
+  "name": "jeans_front",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Danny Kim <dkim7474@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

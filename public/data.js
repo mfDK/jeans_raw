@@ -5,9 +5,13 @@ module.exports = function() {
 
     var brand = ["Naked and Famous", "Levi's", "Nudies", "3sixteeen", "Japan Blue's", "Baldwin", "Left Field"];
 
-    function randomNumber() {
-        var number = Math.floor(Math.random() * 10);
-        return number.toString();
+    function randomNumber(between) {
+        if (between) {
+            var number = Math.floor(Math.random() * between);
+            return number;
+        } else {
+            return Math.floor(Math.random() * 10);
+        }
     }
 
     function Jean(id, name, brand, worn, popularity) {
@@ -19,7 +23,7 @@ module.exports = function() {
     }
 
     for (var i = 0; i < 50; i++) {
-        data.jeans.push(new Jean(i,"Jean" + randomNumber(),brand[i],randomNumber(),randomNumber()));
+        data.jeans.push(new Jean(i,"Jean" + randomNumber(),brand[randomNumber(brand.length)],randomNumber(),randomNumber()));
     }
 
     return data;

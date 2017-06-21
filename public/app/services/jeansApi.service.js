@@ -22,5 +22,16 @@
                 return response.data;
             });
         }
+
+        function upVote(data) {
+            return $http({
+                method: 'POST',
+                url: url,
+                data: data
+            })
+            .then(function(response) {
+                return response.data;
+            })
+        }
     }
 })();

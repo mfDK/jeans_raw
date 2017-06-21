@@ -10,7 +10,6 @@
     function JeansController(Jeans) {
         var vm = this;
         vm.getJeans = getJeans;
-        vm.hello = "Hello Angular has been Bootstrapped"
 
         launch();
 
@@ -24,6 +23,10 @@
                     vm.jeans = response;
                     return vm.jeans;
                 });
-        };
+        }
+
+        function vote() {
+
+        }
     }
 })();

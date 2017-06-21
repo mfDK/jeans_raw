@@ -35,9 +35,6 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -46,7 +43,7 @@
       </div>
     </nav>
 
-    <div class="container-fluid jeans-container" ng-controller="JeansController as $ctrl" >
+    <div class="container jeans-container" ng-controller="JeansController as $ctrl" >
         <div class="row">
             <div class="card text-center col-md-3" ng-repeat="jean in $ctrl.jeans">
               <img class="card-img-top" src="{{ jean.url }}">
@@ -59,8 +56,11 @@
                 <li class="list-group-item">Popularity: {{ jean.popularity }}</li>
               </ul>
               <div class="card-block">
-                <a href="#" class="card-link">Card link</a>
+                <button class="btn btn-primary" ng-click="$ctrl.vote()">Vote</button>
                 <a href="#" class="card-link">Another link</a>
+              </div>
+              <div class="card-footer">
+                  {{ jean.created }}
               </div>
             </div>
         </div>
